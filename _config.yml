@@ -1,4 +1,4 @@
-theme: minima #jekyll-theme-architect
+#theme: jekyll-theme-architect
 # Site Build Settings
 
 # Ensure we can connect to the server when port forwarding to a container
@@ -18,7 +18,7 @@ plugins:             [jekyll-paginate, jekyll-sitemap, jekyll-feed, jekyll-seo-t
 
 sass:
   sass_dir: assets/css
-  style: :nested
+  style: nested
 
 # Customise atom feed settings (this is where Jekyll-Feed gets configuration information)
 title:		           "NorthEast CSU - Center of Excellence"

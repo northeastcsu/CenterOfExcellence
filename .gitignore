@@ -1,34 +1,3 @@
-Skip to content
-Why GitHub? 
-Team
-Enterprise
-Explore 
-Marketplace
-Pricing 
-Search
-Sign in
-Sign up
-Azure
-/
-MediaEntertainment
-Public
-Code
-Issues
-Pull requests
-Actions
-Projects
-Wiki
-Security
-Insights
-MediaEntertainment/.gitignore
-@jaspecla
-jaspecla changed styles on home page
-Latest commit 942f5ec on Jan 5, 2021
- History
- 3 contributors
-@jaspecla@microsoft-github-operations@bcosden
-357 lines (288 sloc)  6.3 KB
-   
 # Jekyll-specific .gitignore
 _site/**
 .sass-cache/
