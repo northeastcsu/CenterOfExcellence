@@ -1,0 +1,34 @@
+theme: minima #jekyll-theme-architect
+# Site Build Settings
+
+# Ensure we can connect to the server when port forwarding to a container
+host: 127.0.0.1 #0.0.0.0
+domain: stunning-winner-94fd0ddf.pages.github.io     # if you want to force HTTPS, specify the domain without the http at the start, e.g. example.com
+url: https://stunning-winner-94fd0ddf.pages.github.io/  # the base hostname and protocol for your site, e.g. http://example.com
+baseurl: /     # place folder name if the site is served in a subfolder
+
+# jekyll-paginate configuration
+paginate:            20
+
+# Build settings
+markdown:            kramdown
+highlighter:         rouge
+permalink:           none
+plugins:             [jekyll-paginate, jekyll-sitemap, jekyll-feed, jekyll-seo-tag]
+
+sass:
+  sass_dir: assets/css
+  style: :nested
+
+# Customise atom feed settings (this is where Jekyll-Feed gets configuration information)
+title:		           "NorthEast CSU - Center of Excellence"
+description:	       "Repository for solutions and knowledge shareing of Digital Apps"
+author:              "Microsoft"
+
+# RSS 2.0 can be used instead of Atom by uncommenting following two lines
+#feed:
+#  path: rss-feed.xml
+
+collections:
+  solutions:
+    output: false
