@@ -2,7 +2,6 @@ name: COE Content
 description: Create new content for the COE Site
 title: "[New Content]: "
 labels: []
-assignees:  
 body:
   - type: markdown
     attributes:
@@ -60,7 +59,7 @@ body:
     validations:
       required: false        
   - type: input
-    id: image
+    id: solution_url
     attributes:
       label: Content Link
       description: Enter a fully qualified URL to a public site hosting this content
