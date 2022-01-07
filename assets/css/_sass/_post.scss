@@ -13,6 +13,15 @@
   margin-bottom: 10px;
 }
 
+.post-title{
+  font-size: 27pt;
+  text-align: center;
+  position: absolute;
+  padding: 20px;
+  //-webkit-transform: translateX(-50%) translateY(-50%);
+  //transform: translateX(-50%) translateY(-50%);
+}
+
 .post-date {
   display: block;
   margin-bottom: 1rem;

@@ -19,16 +19,14 @@ layout: default
             </div>
             <div class="topic-box">
                 <section>
-                    <p>Welcome to the Azure Media and Entertainment Github Repository.</p>
-                    <p>This site was designed as a community driven repository to host deployment ready projects to accelerate your journey to the Azure cloud in the Media and Entertainment industry space.</p>
-                    <p>Look to this site for new and updated content on a regular basis from Microsoft engineering and customer success teams as well as from our partners and contributing customers. The site is open to all to provide innovation in the industry.</p>
-                    <p>The site is divided up into sections aligned with workflows relevant to the industry. Click on the left hand menu to dig into content relevant to the selected workflow. The content has indicators to help you deploy and make use of this accelerators such as language and deployment template type as well as a getting started guide and architectural diagrams. If you want to see an alphabetical list of solutions on this site, click on “Solutions” at the top menu bar.</p>
+                    {{ site.description }}
                 </section>
             </div>
         </div>
         {% for post in site.posts %}
             <article style="display: none;" id="{{post.categories}}">
                 <div class="content-banner" style="{% if post.image %}background-image: url({{ site.github.url }}/assets/img/{{ post.image }});{% endif %}">
+                    <div class="post-title">{{ post.title }}</div>
                     <div class="post-share">
                         <div class="post-date">{{ site.data.settings.sharing_button_prompt }}</div>
                         <div class="sharing-icons">
@@ -50,8 +48,9 @@ layout: default
                         {% if solution.categories == post.categories %}
                             {% assign card_index = card_index | plus:1 %}
                             <li class="card card-position" data-id="#card-{{ solution.categories }}-{{ card_index }}" data-desc="#desc-{{post.categories}}">
-                                <img class="card-icon" src="{{ site.github.url }}/assets/img/{{ solution.image }}.png" height="40" width="40" />
-                                <h3 class="card-title">{{ solution.title }}</h3>
+                                <a class="solution-link ui-button ui-corner-all" href="{{ solution.solution_url }}" target="_blank">
+                                    <h3 class="card-title">{{ solution.title }}</h3>
+                                </a>
                                 <div id="card-{{ solution.categories }}-{{ card_index }}" class="solution-description">
                                     <p><b>{{ solution.title }}</b></p>
                                     <p><i>{{ solution.description }}</i></p>

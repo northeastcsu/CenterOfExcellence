@@ -1,9 +1,9 @@
 ---
-title: "Azure PowerApps Content Ingestion Pipeline"
+title: "Azure DevOps"
 author: "Microsoft"
 categories: links
 tags: ['link']
-description: "<b>!!TEST ___ TEST!!</b>"
-image: powerapp
-solution_url: https://github.com/MediaEntertainmentLabs/content-ingest-pipeline
+description: "Documentation on Azure DevOps and DevOps best practices."
+image: 
+solution_url: https://docs.microsoft.com/en-us/devops/
 ---
