@@ -1,0 +1,69 @@
+name: COE Content
+description: Create new content for the COE Site
+title: "[New Content]: "
+labels: []
+assignees:  
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for your content!
+  - type: input
+    id: title
+    attributes:
+      label: Title
+      description: Brief title for this content
+      placeholder: ex. Azure Synapse RBAC best practices
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: A few sentences on what this content includes
+      placeholder: Covers ways to control access to a Synapse Workspace using Azure RBAC and SQL permissions
+    validations:
+      required: true
+  - type: dropdown
+    id: categories
+    attributes:
+      label: Category
+      description: Category
+      options:
+        - best-practices
+        - code
+        - links
+    validations:
+      required: true
+  - type: input
+    id: author
+    attributes:
+      label: Author
+      description: Who gets credit?
+      placeholder: ex. Microsoft
+    validations:
+      required: true      
+  - type: input
+    id: tags
+    attributes:
+      label: tags
+      description: Comma-separated list of tags
+      placeholder: ex. synapse, data, rbac
+    validations:
+      required: false     
+  - type: input
+    id: image
+    attributes:
+      label: Image
+      description: Enter a fully qualified URL to a public image that will be used on the content
+      placeholder: ex. http://www.microsoft.com/images/synapse_logo.jpg
+    validations:
+      required: false        
+  - type: input
+    id: image
+    attributes:
+      label: Content Link
+      description: Enter a fully qualified URL to a public site hosting this content
+      placeholder: ex. http://www.microsoft.com/images/syanpse_rbac
+    validations:
+      required: false               
