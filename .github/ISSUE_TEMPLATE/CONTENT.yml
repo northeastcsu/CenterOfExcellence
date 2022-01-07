@@ -1,6 +1,6 @@
 name: COE Content
-description: Create new content for the COE Site
-title: "[New Content]: "
+description: Submit new content for the Northeast COE Site
+title: "New Content Submission"
 labels: []
 body:
   - type: markdown
