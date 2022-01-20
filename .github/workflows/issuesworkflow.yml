@@ -1,0 +1,49 @@
+name: Issue Workflow
+on:
+  issues:
+    types:
+      - labeled
+      - opened
+jobs:
+  get-issue-info:
+    if: github.event.label.name == 'checked'
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      contents: write
+      pull-requests: write
+    env:
+      FILENAME: ${{ github.event.issue.id }}
+      BODY: "${{ github.event.issue.body }} "
+    steps:
+      - name: Read body
+        run: echo 'Body ${{ github.event.issue.body }}'
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Create file
+        run:  |
+          cd _solutions
+          New-item -Path . -Name "${{env.FILENAME}}.md"
+          $content = "${{env.BODY}}"
+          $title, $description, $category, $author, $tags, $image, $contentlink = ($content -split "\n\n")[1,3,5,7,9,11,13]
+          $title
+          "---" >> ${{env.FILENAME}}.md
+          "title: $title" >> ${{env.FILENAME}}.md
+          "author: $author" >> ${{env.FILENAME}}.md
+          "categories: $category" >> ${{env.FILENAME}}.md
+          "tags: [$tags]" >> ${{env.FILENAME}}.md
+          "description: $description" >> ${{env.FILENAME}}.md
+          "image: $image" >> ${{env.FILENAME}}.md
+          "solution_url: $contentlink" >> ${{env.FILENAME}}.md
+          "---" >> ${{env.FILENAME}}.md
+        shell: pwsh
+      - name: setup git config
+        run: |
+          git config user.name "GitHub Actions Bot"
+          git config user.email "<>"
+      - name: stage changes
+        run: git add .
+      - name: commit changes
+        run: git commit -m "adding new file"
+      - name: push new file
+        run: git push origin HEAD:main

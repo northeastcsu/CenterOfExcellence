@@ -22,7 +22,7 @@ sass:
 
 # Customise atom feed settings (this is where Jekyll-Feed gets configuration information)
 title:		           "NorthEast CSU - Center of Excellence"
-description:	       "Repository for solutions and knowledge shareing of Digital Apps"
+description:	       "Repository for solutions and knowledge sharing of Digital Apps"
 author:              "Microsoft"
 
 # RSS 2.0 can be used instead of Atom by uncommenting following two lines
