@@ -46,20 +46,39 @@ layout: default
                     {% assign card_index = 0 %}
                     {% for solution in site.solutions %}
                         {% if solution.categories == post.categories %}
-                            {% assign card_index = card_index | plus:1 %}
-                            <li class="card card-position" data-id="#card-{{ solution.categories }}-{{ card_index }}" data-desc="#desc-{{post.categories}}">
-                                <a class="solution-link ui-button ui-corner-all" href="{{ solution.solution_url }}" target="_blank">
-                                    <h3 class="card-title">{{ solution.title }}</h3>
-                                </a>
-                                <div id="card-{{ solution.categories }}-{{ card_index }}" class="solution-description">
-                                    <p><b>{{ solution.title }}</b></p>
-                                    <p><i>{{ solution.description }}</i></p>
-                                    <br>
-                                    <a class="solution-link ui-button ui-corner-all" href="{{ solution.solution_url }}" target="_blank">Explore Solution</a>
-                                    <br>
-                                    <h4>(provided by {{ solution.author }})</h4>
-                                </div>
-                            </li>
+                            <!-- Card Layout -->
+                            {% if solution.categories == "" %}
+                                {% assign card_index = card_index | plus:1 %}
+                                <li class="card card-position" data-id="#card-{{ solution.categories }}-{{ card_index }}" data-desc="#desc-{{post.categories}}">
+                                    <a class="solution-link ui-button ui-corner-all" href="{{ solution.solution_url }}" target="_blank">
+                                        <h3 class="card-title">{{ solution.title }}</h3>
+                                    </a>
+                                    <div id="card-{{ solution.categories }}-{{ card_index }}" class="solution-description">
+                                        <p><b>{{ solution.title }}</b></p>
+                                        <p><i>{{ solution.description }}</i></p>
+                                        <br>
+                                        <a class="solution-link ui-button ui-corner-all" href="{{ solution.solution_url }}" target="_blank">Explore Solution</a>
+                                        <br>
+                                        <h4>(provided by {{ solution.author }})</h4>
+                                    </div>
+                                </li>
+                            {% endif %}
+                            <!-- Link Layout -->
+                            {% if solution.categories == "links" %}
+                                <li>
+                                    <h3>{{ solution.description }}</h3>
+                                    <a class="" href="{{ solution.solution_url }}" target="_blank">{{ solution.title }}</a>
+                                    <h4>(provided by {{ solution.author }})</h4>                                    
+                                </li>
+                            {% endif %}
+                            <li>
+                                <a class="" href="{{ solution.solution_url }}" target="_blank"><h3>{{ solution.title }}</h3></a>
+                                <span>{{ solution.description }}</span>
+                                {% if solution.content != "" %}
+                                    <div>{{ solution.content }}</div>
+                                {% endif %}
+                                <i>(provided by {{ solution.author }})</i>                                    
+                            </li>                            
                         {% endif %}
                     {% endfor %}
                 <ul>
