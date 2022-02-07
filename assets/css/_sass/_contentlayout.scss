@@ -88,13 +88,16 @@
         text-shadow: 1px 2px 3px black;
         text-indent: 1.5em;
     }
-    .home-banner{
-        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url($home-background + "/assets/img/M&E-homeimg-2.png");
+/*     .home-banner{
+        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url($home-background + "/assets/img/LightBulb.png");
         height: 500px;
         background-repeat: no-repeat;
         background-size: contain;
         background-position-y: center;
         border-radius: 6px;   
+    } */
+    .home-banner h1{
+        color: black;
     }
     .content-banner{
         color:#fff;
