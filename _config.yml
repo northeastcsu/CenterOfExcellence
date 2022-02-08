@@ -28,6 +28,9 @@ baseurl: "CenterOfExcellence" # the subpath of your site, e.g. /blog
 url: "https://github.com/northeastcsu/" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: jekyllrb
 github_username:  jekyll
+markdown: kramdown
+  syntax_highlighter: rouge
+highlighter: rouge
 
 # Build settings
 theme: jekyll-theme-tactile
