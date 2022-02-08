@@ -78,6 +78,19 @@
     overflow: auto;
 }
 
+.content pre{
+    word-break: normal;
+    word-wrap: normal;
+}
+
+.link-list{
+    list-style-type: none;
+}
+
+.link-item{
+    border-top: 2px solid black;
+}
+
 /* Home Content */
 
 .home-section {

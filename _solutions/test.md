@@ -2,7 +2,7 @@
 title: "Test Snippet"
 author: "Microsoft"
 categories: code
-tags: ['code']
+tags: ['code', 'c#']
 description: "Test snippet of code"
 image: 
 solution_url:

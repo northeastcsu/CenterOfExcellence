@@ -42,13 +42,26 @@ layout: default
                 <div class="topic-box">
                     {{ post.content }}
                 </div>
-                <div id="desc-{{post.categories}}" class="solution-description-box"></div>               
+                <div id="desc-{{post.categories}}" class="solution-description-box"></div>  
+                <ul class="link-list">
+                    {% for solution in site.solutions %}
+                        {% if solution.categories == post.categories %}
+                            {% if solution.categories[0] == "links" %}
+                                <li class="link-item">
+                                    <h3><a class="" href="{{ solution.solution_url }}" target="_blank">{{ solution.title }}</a></h3>
+                                    <span>{{ solution.description }}</span>
+                                    <h4>(provided by {{ solution.author }})</h4>                                    
+                                </li>
+                            {% endif %}
+                        {% endif %}
+                    {% endfor %}
+                </ul>           
                 <ul class="card-grid card-grid-2x3">
                     {% assign card_index = 0 %}
                     {% for solution in site.solutions %}
                         {% if solution.categories == post.categories %}
                             <!-- Card Layout -->
-                            {% if solution.categories == "" %}
+                            {% if solution.categories[0] == "fake" %}
                                 {% assign card_index = card_index | plus:1 %}
                                 <li class="card card-position" data-id="#card-{{ solution.categories }}-{{ card_index }}" data-desc="#desc-{{post.categories}}">
                                     <a class="solution-link ui-button ui-corner-all" href="{{ solution.solution_url }}" target="_blank">
@@ -57,6 +70,7 @@ layout: default
                                     <div id="card-{{ solution.categories }}-{{ card_index }}" class="solution-description">
                                         <p><b>{{ solution.title }}</b></p>
                                         <p><i>{{ solution.description }}</i></p>
+                                        <span>No cat</span>
                                         <br>
                                         <a class="solution-link ui-button ui-corner-all" href="{{ solution.solution_url }}" target="_blank">Explore Solution</a>
                                         <br>
@@ -65,21 +79,21 @@ layout: default
                                 </li>
                             {% endif %}
                             <!-- Link Layout -->
-                            {% if solution.categories == "links" %}
+                            {% if solution.categories[0] != "links" %}
                                 <li>
-                                    <h3>{{ solution.description }}</h3>
-                                    <a class="" href="{{ solution.solution_url }}" target="_blank">{{ solution.title }}</a>
-                                    <h4>(provided by {{ solution.author }})</h4>                                    
+                                    {% if solution.solution_url[0] == "" %}
+                                        <h3>{{ solution.title }}</h3>
+                                    {% else %}
+                                        <a class="" href="{{ solution.solution_url }}" target="_blank"><h3>{{ solution.title }}</h3></a>
+                                    {% endif %}
+                                    <span>{{ solution.description }}</span>
+                                    <h4>Tags: {{ solution.tags | array_to_sentence_string: "," }}</h4>
+                                    {% if solution.content != "" %}
+                                        <div class="content">{{ solution.content }}</div>
+                                    {% endif %}
+                                    <i>(provided by {{ solution.author }})</i>                                    
                                 </li>
                             {% endif %}
-                            <li>
-                                <a class="" href="{{ solution.solution_url }}" target="_blank"><h3>{{ solution.title }}</h3></a>
-                                <span>{{ solution.description }}</span>
-                                {% if solution.content != "" %}
-                                    <div>{{ solution.content }}</div>
-                                {% endif %}
-                                <i>(provided by {{ solution.author }})</i>                                    
-                            </li>                            
                         {% endif %}
                     {% endfor %}
                 <ul>
