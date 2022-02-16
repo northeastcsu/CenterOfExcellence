@@ -54,6 +54,10 @@
     padding: 10px;
 }
 
+.solution-list{
+    list-style-type: none;
+}
+
 .solution-description-box{
     background-color:rgb(245, 245, 245);
     border-radius: 6px;
@@ -70,6 +74,15 @@
     margin: 5px;
 }
 
+.solution-item{
+    border-top: 2px solid black;
+}
+
+.solution-content pre{
+    word-break: normal;
+    word-wrap: normal;
+}
+
 .topic-box{
     max-width: 590px;
     z-index: 1;
@@ -78,29 +91,9 @@
     overflow: auto;
 }
 
-.content pre{
-    word-break: normal;
-    word-wrap: normal;
-}
-
-.link-list{
-    list-style-type: none;
-}
-
-.link-item{
-    border-top: 2px solid black;
-}
-
 /* Home Content */
 
 .home-section {
-    .topic-box{
-        position: absolute;
-        top: 200px;
-        color: #fff;
-        text-shadow: 1px 2px 3px black;
-        text-indent: 1.5em;
-    }
 /*     .home-banner{
         background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url($home-background + "/assets/img/LightBulb.png");
         height: 500px;
@@ -110,13 +103,20 @@
         border-radius: 6px;   
     } */
     .home-banner h1{
-        color: black;
+        color: white;
+    }
+    .home-banner h4{
+        text-align: center;
     }
     .content-banner{
         color:#fff;
         background-color: #1a070b;
         border-radius: 6px;
         height: 500px;
+    }
+    .home-img{
+        max-width: 300px;
+        margin: 60px auto auto auto;
     }
 }
 

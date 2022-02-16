@@ -12,6 +12,9 @@ paginate:            20
 
 # Build settings
 markdown:            kramdown
+kramdown:
+  math_engine: mathjax
+  syntax_highlighter: rouge
 highlighter:         rouge
 permalink:           none
 plugins:             [jekyll-paginate, jekyll-sitemap, jekyll-feed, jekyll-seo-tag]
