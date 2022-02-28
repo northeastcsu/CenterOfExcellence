@@ -2,7 +2,6 @@ name: Best Practice
 description: Submit a best practice for the Northeast COE Site
 title: "Best Practice Submission"
 labels: ["best-practices"]
-categories: "best-practices"
 body:
   - type: markdown
     attributes:
