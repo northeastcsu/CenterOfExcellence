@@ -1,17 +1,17 @@
-name: COE Content
-description: Submit new content for the Northeast COE Site
-title: "New Content Submission"
-labels: []
+name: Helpful Link
+description: Submit a link for the Northeast COE Site
+title: "Helpful Link Submission"
+labels: ["link"]
 body:
   - type: markdown
     attributes:
       value: |
-        Thanks for your content!
+        Thanks for your link!
   - type: input
     id: title
     attributes:
       label: Title
-      description: Brief title for this content
+      description: Brief title for this link
       placeholder: ex. Azure Synapse RBAC best practices
     validations:
       required: true
@@ -19,19 +19,8 @@ body:
     id: description
     attributes:
       label: Description
-      description: A few sentences on what this content includes
+      description: A few sentences on what this link covers
       placeholder: Covers ways to control access to a Synapse Workspace using Azure RBAC and SQL permissions
-    validations:
-      required: true
-  - type: dropdown
-    id: categories
-    attributes:
-      label: Category
-      description: Category
-      options:
-        - best-practices
-        - code
-        - links
     validations:
       required: true
   - type: input
