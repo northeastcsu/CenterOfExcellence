@@ -2,7 +2,6 @@ name: Code Snippet
 description: Submit a code snippet the Northeast COE Site
 title: "Code Snippet Submission"
 labels: ["code"]
-categories: ["code"]
 body:
   - type: markdown
     attributes:
