@@ -1,0 +1,56 @@
+name: Code Snippet
+description: Submit a code snippet the Northeast COE Site
+title: "Code Snippet Submission"
+labels: ["code"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for your code snippet!
+  - type: input
+    id: title
+    attributes:
+      label: Title
+      description: Brief title for this code snippet
+      placeholder: ex. Get tenant ID from subscription ID
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: A few sentences on what this snippet demonstrates covers
+      placeholder: Sometimes you have an Azure subscription ID but need the tenant ID it is connected to
+    validations:
+      required: true
+  - type: input
+    id: author
+    attributes:
+      label: Author
+      description: Who gets credit?
+      placeholder: ex. Microsoft
+    validations:
+      required: true      
+  - type: input
+    id: tags
+    attributes:
+      label: tags
+      description: Comma-separated list of tags
+      placeholder: ex. cli, azure
+    validations:
+      required: false     
+  - type: input
+    id: image
+    attributes:
+      label: Image
+      description: Enter a fully qualified URL to a public image that will be used on the content
+      placeholder: ex. http://azurecomcdn.azureedge.net/cvt-d941d2e182be8e17b57ea4354014dff1138e97101d22f6e941e56ac6228b0260/svg/azure.svg
+    validations:
+      required: false        
+  - type: textarea
+    id: body
+    attributes:
+      label: Snippet
+      description: Paste the code snippet within markdown ticks (```CSharp)
+    validations:
+      required: true
