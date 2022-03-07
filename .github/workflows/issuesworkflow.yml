@@ -1,12 +1,11 @@
-name: Issue Workflow
+name: Link Issue Workflow
 on:
   issues:
     types:
       - labeled
-      - opened
 jobs:
   get-issue-info:
-    if: github.event.label.name == 'checked'
+    if: github.event.label.name == 'link'
     runs-on: ubuntu-latest
     permissions:
       issues: write
@@ -15,17 +14,21 @@ jobs:
     env:
       FILENAME: ${{ github.event.issue.id }}
       BODY: "${{ github.event.issue.body }} "
+      PRBODY: "REVIEW CHANGES FOR #${{ github.event.issue.number }}. Closes #${{ github.event.issue.number }}"
     steps:
       - name: Read body
         run: echo 'Body ${{ github.event.issue.body }}'
       - name: Checkout
         uses: actions/checkout@v2
+      - name: Create branch
+        run: |
+          git checkout -b newcontent-${{env.FILENAME}}
       - name: Create file
         run:  |
           cd _solutions
           New-item -Path . -Name "${{env.FILENAME}}.md"
           $content = "${{env.BODY}}"
-          $title, $description, $category, $author, $tags, $image, $contentlink = ($content -split "\n\n")[1,3,5,7,9,11,13]
+          $title, $description, $author, $tags, $image, $contentlink = ($content -split "\n\n")[1,3,5,7,9,11]
           $title
           "---" >> ${{env.FILENAME}}.md
           "title: $title" >> ${{env.FILENAME}}.md
@@ -44,6 +47,10 @@ jobs:
       - name: stage changes
         run: git add .
       - name: commit changes
-        run: git commit -m "adding new file"
+        run: |
+          git commit -m "adding new file"
+          git push -u origin newcontent-${{env.FILENAME}}
       - name: push new file
-        run: git push origin HEAD:main
+        run: gh pr create --title "New LINK Content Submission ${{env.FILENAME}}" --body "${{env.PRBODY}}" --base main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
