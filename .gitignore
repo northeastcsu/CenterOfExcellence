@@ -1,6 +1,6 @@
 # Jekyll-specific .gitignore
 _site/**
-_solutions/**
+#_solutions/**
 .sass-cache/
 .jekyll-cache/
 .jekyll-metadata
