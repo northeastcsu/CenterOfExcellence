@@ -38,7 +38,7 @@ jobs:
           "image: $image" >> ${{env.FILENAME}}.md
           "---" >> ${{env.FILENAME}}.md
           '```' >> ${{env.FILENAME}}.md
-          "$snippet" >> ${{env.FILENAME}}.md
+          '$snippet' >> ${{env.FILENAME}}.md
           '```' >> ${{env.FILENAME}}.md
         shell: pwsh
       - name: setup git config
