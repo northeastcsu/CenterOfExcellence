@@ -51,6 +51,6 @@ body:
     id: body
     attributes:
       label: Snippet
-      description: Paste the code snippet within markdown ticks (```CSharp)
+      description: Paste the code snippet without markdown formatting below. We will surround in <code> tags.
     validations:
       required: true
