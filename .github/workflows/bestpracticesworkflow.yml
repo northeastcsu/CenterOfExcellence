@@ -33,6 +33,7 @@ jobs:
           "---" >> ${{env.FILENAME}}.md
           "title: $title" >> ${{env.FILENAME}}.md
           "author: $author" >> ${{env.FILENAME}}.md
+          "categories: best-practices" >> ${{env.FILENAME}}.md
           "tags: [$tags]" >> ${{env.FILENAME}}.md
           "description: $description" >> ${{env.FILENAME}}.md
           "image: $image" >> ${{env.FILENAME}}.md
