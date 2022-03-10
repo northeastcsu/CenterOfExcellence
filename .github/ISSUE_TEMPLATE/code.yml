@@ -47,10 +47,10 @@ body:
       placeholder: ex. http://azurecomcdn.azureedge.net/cvt-d941d2e182be8e17b57ea4354014dff1138e97101d22f6e941e56ac6228b0260/svg/azure.svg
     validations:
       required: false        
-  - type: textarea
-    id: body
+  - type: input
+    id: gist
     attributes:
-      label: Snippet
-      description: Paste the code snippet without markdown formatting below. We will surround in <code> tags.
+      label: Link to Gist
+      description: Provide a link to a public [gist](https://docs.github.com/en/get-started/writing-on-github/editing-and-sharing-content-with-gists/creating-gists)
     validations:
       required: true
