@@ -12,12 +12,10 @@ jobs:
       contents: write
       pull-requests: write
     env:
-      FILENAME: ${{ github.event.issue.id }}
+      FILENAME: ${{ github.event.issue.number }}
       BODY: "${{ github.event.issue.body }} "
       PRBODY: "REVIEW CHANGES FOR #${{ github.event.issue.number }}. Closes #${{ github.event.issue.number }}"
     steps:
-      - name: Read body
-        run: echo 'Body ${{ github.event.issue.body }}'
       - name: Checkout
         uses: actions/checkout@v2
       - name: Create branch
@@ -26,19 +24,21 @@ jobs:
       - name: Create file
         run:  |
           cd _solutions
-          New-item -Path . -Name "${{env.FILENAME}}.md"
           $content = "${{env.BODY}}"
           $title, $author, $tags, $image, $bp = ($content -split "\n\n")[1,3,5,7,9]
-          $title
-          "---" >> ${{env.FILENAME}}.md
-          "title: $title" >> ${{env.FILENAME}}.md
-          "author: $author" >> ${{env.FILENAME}}.md
-          "categories: best-practices" >> ${{env.FILENAME}}.md
-          "tags: [$tags]" >> ${{env.FILENAME}}.md
-          "description: $description" >> ${{env.FILENAME}}.md
-          "image: $image" >> ${{env.FILENAME}}.md
-          "---" >> ${{env.FILENAME}}.md
-          "$bp" >> ${{env.FILENAME}}.md
+          $date = Get-Date -UFormat "%F"
+          $issuetitle = $title -replace " ",""
+          $filename = $date + "-" + $issuetitle
+          New-item -Path . -Name "$filename.md"
+          "---" >> "$filename.md"
+          "title: $title" >> "$filename.md"
+          "author: $author" >> "$filename.md"
+          "categories: best-practices" >> "$filename.md"
+          "tags: [$tags]" >> "$filename.md"
+          "description: $description" >> "$filename.md"
+          "image: $image" >> "$filename.md"
+          "---" >> "$filename.md"
+          "$bp" >> "$filename.md"
         shell: pwsh
       - name: setup git config
         run: |
