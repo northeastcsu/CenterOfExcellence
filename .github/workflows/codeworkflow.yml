@@ -29,6 +29,7 @@ jobs:
           $date = Get-Date -UFormat "%F"
           $issuetitle = $title -replace " ",""
           $filename = $date + "-" + $issuetitle
+          $gist = $gist.Trim()
           New-item -Path . -Name "$filename.md"
           "---" >> "$filename.md"
           "title: $title" >> "$filename.md"
