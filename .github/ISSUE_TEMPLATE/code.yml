@@ -51,6 +51,6 @@ body:
     id: gist
     attributes:
       label: Link to Gist
-      description: Provide a link to a public [gist](https://docs.github.com/en/get-started/writing-on-github/editing-and-sharing-content-with-gists/creating-gists)
+      description: Provide a *share* link to a public [gist](https://docs.github.com/en/get-started/writing-on-github/editing-and-sharing-content-with-gists/creating-gists)
     validations:
       required: true
