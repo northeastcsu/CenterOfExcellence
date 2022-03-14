@@ -1,8 +1,7 @@
-# CenterOfExcellence
-Repository for Northeast CSU CoE shared material
+## CenterOfExcellence
+We are happy to announce a central repository for all the awesome knowledge that the CSU community has to offer.  The App Innovation Center of Excellence is your place to share helpful links, code sample, and other best practices that can be shared with our customers.
 
 Backend for GitHub Pages: https://northeastcsu.github.io/CenterOfExcellence
-
 
 # Welcome to our team collaboration site for code and artifacts.
 
@@ -18,8 +17,28 @@ This repo may contain both public and private repo's.
 
 * **This Org fully supports diverity and inclusion, please report community actions against the Code of Conduct and feel free to contribute to the Code of Conduct, via Pull Request.**
 
+## **GUIDELINES FOR SUBMITTING NEW CONTENT**
+
+Go to https://aka.ms/submit-coe-content and create an issue based on the content type you would like to submit. Please be sure to fill out all information requested in each entry. Give each submission a unique title and deatiled description. This will ensure the submitted content will be approved to publish on the site. 
+
+
+**Content Types**
+
+1. Helpful Links
+
+    * Links to documentation, blogs, and previously published public information
+
+1. Code Snippets
+
+    * Create a **Public** [GitHub gist](https://docs.github.com/en/get-started/writing-on-github/editing-and-sharing-content-with-gists/creating-gists)
+
+1. Best Practice
+
+    * Short 1 -2 paragraph blog post. 
+
 
 ## **GUIDELINES OF USAGE FOR REPOS**
+Please use the following guidelines if creating a new repo in the Northeast CSU GitHub Organization.
 
 General Guidance for OpenSource Repo's
 * https://opensource.guide/
@@ -34,8 +53,7 @@ How to Choose the Correct License (note MIT should be the default)
 * https://choosealicense.com/
 
 How to submit a Pull Request
-* https://www.digitalocean.com/community/tutorials/how-to-create-a-pull-request-on-github
-
+* https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request
 
 -========================================================-
 
@@ -43,7 +61,11 @@ How to submit a Pull Request
 
 1. Keep it organized. Make it easy for team members to find content and understand what was published.
 
-2. Do not use it as a file dump for your code snippets. Use your personal Github for that.
+2. Do not use it as a file dump for your code snippets. Instead:
+    
+    a. Create a **Public** [GitHub gist](https://docs.github.com/en/get-started/writing-on-github/editing-and-sharing-content-with-gists/creating-gists) and submit a code snippet
+
+    b. Use your personal Github and submit a helpful link
 
 3. This is a shared site not a personal site.
 
@@ -53,11 +75,9 @@ How to submit a Pull Request
 
 4. Intent is to share useful code artifacts and build off each others work so we are not re-inventing from scratch or duplicating efforts.
 
-5. Code artifacts should be a deployable solution that solves a problem or shows a use case .
+5. Documentation can be tedious but it is extremely important. All sites must have a LICENSE file and a well documented README
 
-6. Documentation can be tedious but it is extremely important. All sites must have a LICENSE file and a well documented README
-
-7. Etiquette:  each repo should have an owner and then optionally some contributors. If you are not designated as a contributor already, please ask the owner before contributing how he/she would like you to contribute (directly or via pull request)
+6. Etiquette:  each repo should have an owner and then optionally some contributors. If you are not designated as a contributor already, please ask the owner before contributing how they would like you to contribute (directly or via pull request)
 
     a. If possible: even  if you have push rights to your respective repo, you should create a personal (private) fork and then create branches there and raise PR. This will keep main repo clean and your personal workflow out of main repo. 
 
@@ -94,7 +114,7 @@ You can also fork your own personal Github to build on code for our team Github.
 
 **6. Should I create a new repo?**
 
-Please keep in mind the suggested structure above when creating a new repo. Also consider whether your project is already met elsewhere in the current repo, someone else's repo or the Azure Media site. Other than that, go for it. Make your project name meaningful. Ensure a description is available for it. And use the README to describe your project thoroughly.
+Please keep in mind the suggested structure above when creating a new repo. Also consider whether your project is already met elsewhere in the current repo or someone else's repo. Other than that, go for it. Make your project name meaningful. Ensure a description is available for it. And use the README to describe your project thoroughly.
 
 **7. When should I use Pull Requests?**
 
@@ -102,5 +122,4 @@ Pull requests are awesome. They are useful when collaborating with resources out
 
 **8. This structure is too rigid, it sucks!!**
 	
-All of this is initial guidance. The process will evolve. And it is absolutely open to all team input. We can update/change the team guidelines via Pull Request 🤔
-
+All of this is initial guidance. The process will evolve. And it is absolutely open to all team input. We can update/change the team guidelines via Pull Request and GitHub Issue Submissions. Use the **blank issue** submission for feature requests and feedback.
