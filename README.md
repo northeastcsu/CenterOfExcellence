@@ -1,4 +1,4 @@
-## CenterOfExcellence
+# CenterOfExcellence
 We are happy to announce a central repository for all the awesome knowledge that the CSU community has to offer.  The App Innovation Center of Excellence is your place to share helpful links, code sample, and other best practices that can be shared with our customers.
 
 Backend for GitHub Pages: https://northeastcsu.github.io/CenterOfExcellence
